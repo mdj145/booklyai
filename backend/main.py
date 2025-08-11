@@ -2,10 +2,11 @@ from fastapi import FastAPI, Depends, HTTPException
 from fastapi.staticfiles import StaticFiles
 from sqlalchemy.orm import Session
 from typing import List
-from .db import Base, engine, get_db
-from .models import User, Appointment
-from .schemas import AppointmentCreate, AppointmentOut
-from .auth import router as auth_router
+from backend.db import Base, engine, get_db
+from backend.models import User, Appointment
+from backend.schemas import AppointmentCreate, AppointmentOut
+from backend.auth import router as auth_router
+
 
 app = FastAPI(title="BooklyAI MVP")
 Base.metadata.create_all(bind=engine)
