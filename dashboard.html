@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BooklyAI Dashboard</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <h1>BooklyAI Dashboard</h1>
+    <p class="sub">Create and manage appointments.</p>
+
+    <section class="card">
+      <h3>Create Appointment</h3>
+      <form id="appt-form">
+        <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px;">
+          <input required id="customer_name" placeholder="Customer name">
+          <input required id="customer_phone" placeholder="Customer phone (+44...)">
+          <input required id="start_time" type="datetime-local">
+          <input required id="end_time" type="datetime-local">
+        </div>
+        <textarea id="notes" placeholder="Notes" style="width:100%;margin-top:8px;"></textarea>
+        <label><input type="checkbox" id="rem24" checked> Reminder 24h</label>
+        <label style="margin-left:12px;"><input type="checkbox" id="rem1" checked> Reminder 1h</label>
+        <div style="margin-top:8px;">
+          <button class="btn" type="submit">Create</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="card" style="margin-top:16px;">
+      <h3>Your Appointments</h3>
+      <table id="appt-table" style="width:100%;border-collapse:collapse;">
+        <thead><tr><th>ID</th><th>Customer</th><th>Phone</th><th>Start</th><th>End</th><th>Actions</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </div>
+
+  <script src="/dashboard.js"></script>
+</body>
+</html>

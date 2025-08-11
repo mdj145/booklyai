@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: booklyai
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn backend.main:app --host 0.0.0.0 --port $PORT
+    autoDeploy: true
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+      - key: JWT_EXPIRE_HOURS
+        value: "48"
+      - key: ENV
+        value: "prod"
