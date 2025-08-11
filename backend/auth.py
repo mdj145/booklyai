@@ -1,10 +1,11 @@
 from fastapi import APIRouter, Depends, HTTPException
 from fastapi.responses import JSONResponse
 from sqlalchemy.orm import Session
-from .db import get_db
-from .models import User
-from .schemas import SignupRequest, LoginRequest
-from .utils import hash_password, verify_password, create_jwt
+from backend.db import get_db
+from backend.models import User
+from backend.schemas import SignupRequest, LoginRequest
+from backend.utils import hash_password, verify_password, create_jwt
+
 
 router = APIRouter(prefix="/api/auth", tags=["auth"])
 COOKIE_NAME = "booklyai_jwt"
